@@ -8,7 +8,7 @@ class TccViewDelegate extends WatchUi.BehaviorDelegate {
 
     //! Constructor
     public function initialize() {
-        _client = new TccClient(null);
+        _client = new TccClient(null, null);
         _repo = new SetpointRepo();
 
         BehaviorDelegate.initialize();

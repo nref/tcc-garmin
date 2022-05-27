@@ -4,7 +4,6 @@ using Toybox.Graphics as Gfx;
 (:glance)
 class TccGlanceView extends Ui.GlanceView {
 
-    private var _hub as EventHub;
     private var _client as TccClient;
     private var _text as String;
 
@@ -13,11 +12,11 @@ class TccGlanceView extends Ui.GlanceView {
 
         _text = "Loading...";
 
-        _hub = new EventHub();
-        _hub.SubscribeGetSetpointSuccessCallback(method(:HandleGotSetpoint));
-        _hub.SubscribeGetSetpointErrorCallback(method(:HandleGetSetpointError));
+        var hub = new EventHub();
+        hub.SubscribeGetSetpointSuccessCallback(method(:HandleGotSetpoint));
+        hub.SubscribeGetSetpointErrorCallback(method(:HandleGetSetpointError));
 
-        _client = new TccClient(_hub);
+        _client = new TccClient(hub, new ApiKeyRepo());
         _client.GetSetpoint();
     }
     

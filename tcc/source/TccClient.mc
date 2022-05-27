@@ -8,12 +8,18 @@ class TccClient {
 
     private var _url = "https://tcc.sltr.us/setpoint";
     private var _hub as EventHub;
+    private var _repo as ApiKeyRepo;
 
-    public function initialize(hub as EventHub) {
+    public function initialize(hub as EventHub, repo as ApiKeyRepo) {
         _hub = hub;
+        _repo = repo;
 
         if (_hub == null) {
             _hub = new EventHub();
+        }
+
+        if (_repo == null) {
+            _repo = new ApiKeyRepo();
         }
     }
 
@@ -23,6 +29,7 @@ class TccClient {
             :method => Communications.HTTP_REQUEST_METHOD_GET,
             :headers => {
                 "Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED,
+                "x-tcc-apikey" => _repo.Get(),
             },
             :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON,
         };
@@ -40,6 +47,7 @@ class TccClient {
             :method => Communications.HTTP_REQUEST_METHOD_POST,
             :headers => {
                 "Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED,
+                "x-tcc-apikey" => _repo.Get(),
             },
             :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON,
         };
