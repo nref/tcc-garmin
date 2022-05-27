@@ -33,3 +33,15 @@ class TccClient {
 ```
 
 It may be necessary to [generate a developer key](https://developer.garmin.com/connect-iq/connect-iq-basics/getting-started/) in Visual Studio Code before you can compile. Press `Ctrl+Shift+P` and choose `Monkey C: Generate a Developer key`.
+
+Optional: If your companion app is public-facing, you'll want to prevent unauthorized access to your thermostat by setting an API key. You can add it to either `appsettings.json` (replacing the value `"none"`) or to user secrets, i.e. with `dotnet user-secrets set "tcc:apikey" "<your key here>"`. You'll need to set the same key on your watch `ApiKeyRepo.mc`:
+
+```c
+class ApiKeyRepo {
+
+    function initialize() {
+        Set("none"); // change this
+    }
+    ...
+}
+```
