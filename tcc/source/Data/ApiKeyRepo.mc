@@ -7,7 +7,7 @@ import Toybox.Application.Storage;
 class ApiKeyRepo {
 
     function initialize() {
-        Set("none");
+        Set("supersecret");
     }
 
     function Get() as String {
