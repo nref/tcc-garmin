@@ -32,7 +32,7 @@ In vscode, Press `F5` or click `Run -> Start Debugging`. The simulator should st
 
 1. In vscode, Press `Ctrl+Shift+P` and choose `Monkey C: Build for Device`
 2. Choose your device, e.g. `Forerunner 954 LTE`
-3. Choose the output directory, e.g. `bin\954lte`
+3. Choose the output directory, e.g. `bin\945lte`
 4. Choose the build config, e.g. `Release`.
 5. Plug in your device.
 6. Copy the file `tcc.prg` to `<device>/GARMIN/Apps`
