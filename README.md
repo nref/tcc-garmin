@@ -36,7 +36,7 @@ It may be necessary to [generate a developer key](https://developer.garmin.com/c
 
 ## API Key
 
-Optional: If your companion app is public-facing, you'll want to prevent unauthorized access to your thermostat by setting an API key. You can add it to either `appsettings.json` (replacing the value `"none"`) or to user secrets, i.e. with `dotnet user-secrets set "tcc:apikey" "<your key here>"`. You'll need to set the same key on your watch `ApiKeyRepo.mc`:
+Optional: If your companion app is public-facing, you'll want to prevent unauthorized access to your thermostat by setting an API key. You can add it to either `appsettings.json` (replacing the value `"none"`) or to user secrets, i.e. with `dotnet user-secrets set "tcc:apikey" "<your key here>"`. It can be any string. You'll need to set the same key on your watch `ApiKeyRepo.mc`:
 
 ```c
 class ApiKeyRepo {
