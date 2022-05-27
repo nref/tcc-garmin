@@ -53,9 +53,9 @@ class TccClient {
 
 ## API Key
 
-Optional: If your companion app is public-facing, you'll want to prevent unauthorized access to your thermostat by setting an API key. You can add it to either `appsettings.json` (replacing the default value `"supersecret"`) or to user secrets, i.e. with `dotnet user-secrets set "tcc:apikey" "<your key here>"`. It can be any string. 
+_Optional_: If your companion app is public-facing, you'll want to prevent unauthorized access to your thermostat by setting an API key. You can do that by following the directions [here](https://github.com/slater1/tcc-mitm/blob/main/README.md).
 
-You'll need to set the same key on your watch `ApiKeyRepo.mc`:
+It can be any string, but you'll need to set the same key on your watch in `ApiKeyRepo.mc`:
 
 ```c
 class ApiKeyRepo {
