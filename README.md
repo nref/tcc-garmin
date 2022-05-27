@@ -22,4 +22,14 @@ code .
 <In vscode, Press F5 or click Run -> Start Debugging>
 ```
 
+You'll need to change the URL to the companion web service in `TccClient.mc`:
+
+```c
+class TccClient {
+
+    private var _url = <your URL here>;
+    ...
+}
+```
+
 It may be necessary to [generate a developer key](https://developer.garmin.com/connect-iq/connect-iq-basics/getting-started/) in Visual Studio Code before you can compile. Press `Ctrl+Shift+P` and choose `Monkey C: Generate a Developer key`.
