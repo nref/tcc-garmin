@@ -19,7 +19,7 @@ Prequisites:
 git clone https://github.com/slater1/tcc-garmin
 cd tcc-garmin/tcc
 code .
-<In vscode, Press F5 or click Run -> Start Debugging>
+# In vscode, Press F5 or click Run -> Start Debugging
 ```
 
 You'll need to change the URL to the companion web service in `TccClient.mc`:
