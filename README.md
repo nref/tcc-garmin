@@ -36,7 +36,7 @@ In vscode, Press `F5` or click `Run -> Start Debugging`. The simulator should st
 4. Choose the build config, e.g. `Release`.
 5. Plug in your device.
 6. Copy the file `tcc.prg` to `<device>/GARMIN/Apps`
-7. Unplug your device and access the widgets (on the 945: long press UP)
+7. Unplug your device and access the widgets (on the 945: shoft press UP)
 
 # Configuration 
 
